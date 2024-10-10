@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineBooking.BLL\OnlineBooking.BLL.csproj" />
+    <ProjectReference Include="..\OnlineBooking.Utility\OnlineBooking.Utility.csproj" />
     <ProjectReference Include="..\OnlineBooking.ViewModels\OnlineBooking.ViewModels.csproj" />
   </ItemGroup>
 

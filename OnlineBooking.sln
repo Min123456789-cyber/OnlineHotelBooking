@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBooking.BLL", "Online
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBooking.Models", "OnlineBooking.Models\OnlineBooking.Models.csproj", "{BFF98DEC-EA6D-4D3A-A4A9-D3D1FDD23E2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBooking.ViewModels", "OnlineBooking.ViewModels\OnlineBooking.ViewModels.csproj", "{BA1CA4D0-7CF7-4274-BD22-884962381357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBooking.ViewModels", "OnlineBooking.ViewModels\OnlineBooking.ViewModels.csproj", "{BA1CA4D0-7CF7-4274-BD22-884962381357}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBooking.Services", "OnlineBooking.Services\OnlineBooking.Services.csproj", "{513A9262-900D-45BF-AD59-882954AFE074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBooking.Services", "OnlineBooking.Services\OnlineBooking.Services.csproj", "{513A9262-900D-45BF-AD59-882954AFE074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBooking.Utility", "OnlineBooking.Utility\OnlineBooking.Utility.csproj", "{712A909D-09B0-4783-8173-84A7DAD8B678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{513A9262-900D-45BF-AD59-882954AFE074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513A9262-900D-45BF-AD59-882954AFE074}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513A9262-900D-45BF-AD59-882954AFE074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712A909D-09B0-4783-8173-84A7DAD8B678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712A909D-09B0-4783-8173-84A7DAD8B678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712A909D-09B0-4783-8173-84A7DAD8B678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712A909D-09B0-4783-8173-84A7DAD8B678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

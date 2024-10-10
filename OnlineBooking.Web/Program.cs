@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using OnlineBooking.BLL;
 using Microsoft.AspNetCore.Identity;
 using OnlineBooking.BLL.Repository;
+using OnlineBooking.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,9 @@ builder.Services.AddDbContext<ApplicationDbContext>( options => {
 builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddTransient<IRoomTypeService, RoomTypeService>();
+builder.Services.AddTransient<IRoomService, RoomService>();
 
 builder.Services.AddControllersWithViews();
 

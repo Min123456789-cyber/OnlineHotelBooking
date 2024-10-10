@@ -21,10 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\OnlineBooking.BLL\OnlineBooking.BLL.csproj" />
     <ProjectReference Include="..\OnlineBooking.Models\OnlineBooking.Models.csproj" />
+    <ProjectReference Include="..\OnlineBooking.Services\OnlineBooking.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 

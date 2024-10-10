@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using OnlineBooking.BLL.Repository;
 using OnlineBooking.Models;
+using OnlineBooking.Utility;
 using OnlineBooking.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -28,27 +29,20 @@ namespace OnlineBooking.Services
             _unitOfWork.Save();
         }
 
-        public IEnumerable<RoomTypeViewModel> GetAllRoomTypes()
+        public PagedResult<RoomTypeViewModel> GetAllRoomTypes(int pageNumber, int pageSize)
         {
 
-            //var vm = new RoomTypeViewModel();
-            //int totalCount;
+            var vm = new RoomTypeViewModel();
+            int totalCount;
             List<RoomTypeViewModel> vmList = new List<RoomTypeViewModel>();
 
             try
             {
-
-                // Fetch all room types
-                var roomTypes = _unitOfWork.GenericRepository<RoomType>().GetAll().ToList();
-
-                // Convert the RoomType model list to RoomTypeViewModel list
+                int ExcludeRecords = (pageSize * pageNumber) - pageSize;
+                var roomTypes = _unitOfWork.GenericRepository<RoomType>().GetAll().Skip(ExcludeRecords)
+                    .Take(pageSize).ToList();
+                totalCount = _unitOfWork.GenericRepository<RoomType>().GetAll().ToList().Count();
                 vmList = ConvertModelToViewModelList(roomTypes);
-
-                //int ExcludeRecords = (pageSize * pageNumber) - pageSize;
-                //var roomTypes = _unitOfWork.GenericRepository<RoomType>().GetAll().Skip(ExcludeRecords)
-                //    .Take(pageSize).ToList();
-                //totalCount = _unitOfWork.GenericRepository<RoomType>().GetAll().ToList().Count();
-                //vmList = ConvertModelToViewModelList(roomTypes);
 
             }
             catch (Exception)
@@ -56,16 +50,16 @@ namespace OnlineBooking.Services
                 throw;
             }
 
-            //var result = new PagedResult<RoomTypeViewModel>
-            //{
-            //    Data = vmList,
-            //    TotalItems = totalCount,
-            //    PageNumber = pageNumber,
-            //    PageSize = pageSize
+            var result = new PagedResult<RoomTypeViewModel>
+            {
+                Data = vmList,
+                TotalItems = totalCount,
+                PageNumber = pageNumber,
+                PageSize = pageSize
 
-            //};
+            };
 
-            return vmList;
+            return result;
         }
 
         public RoomTypeViewModel GetRoomType(int TypeId)

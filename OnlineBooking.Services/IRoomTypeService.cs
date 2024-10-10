@@ -1,4 +1,5 @@
-﻿using OnlineBooking.ViewModels;
+﻿using OnlineBooking.Utility;
+using OnlineBooking.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace OnlineBooking.Services
 {
     public interface IRoomTypeService
     {
-        IEnumerable<RoomTypeViewModel> GetAllRoomTypes();
+        PagedResult<RoomTypeViewModel> GetAllRoomTypes(int pageNumber, int pageSize);
 
         RoomTypeViewModel GetRoomType(int TypeId);
         void UpdateRoomType(RoomTypeViewModel roomType);

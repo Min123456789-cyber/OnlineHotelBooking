@@ -1,4 +1,5 @@
-﻿using OnlineBooking.ViewModels;
+﻿using OnlineBooking.Utility;
+using OnlineBooking.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace OnlineBooking.Services
 {
     public interface IRoomService
     {
-        IEnumerable<RoomViewModel> GetAll();
+        PagedResult<RoomViewModel> GetAll(int pageNumber, int pageSize);
         RoomViewModel GetRoom(int Id);
         void UpdateRoom(RoomViewModel room);
         void InsertRoom(RoomViewModel room);
